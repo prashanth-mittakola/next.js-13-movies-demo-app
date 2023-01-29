@@ -4,12 +4,12 @@ import { useEffect, useState } from "react";
 import Movie from "../Movie";
 import { genres } from "./constants";
 
-export default function ({ data }) {
+export default function MovieList({ data }) {
   const [filteredData, setFilteredData] = useState([...data]);
   const [actived, setActived] = useState(0);
 
   useEffect(() => {
-    setFilteredData([...data].filter((i) => (actived ? i.genre_ids.includes(actived) : i)));
+    setFilteredData(() => [...data].filter((i) => (actived ? i.genre_ids.includes(actived) : i)));
   }, [actived]);
 
   return (
