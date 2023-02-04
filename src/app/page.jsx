@@ -10,7 +10,7 @@ const endPoints = {
 const endPoint = `${prefixUrl + endPoints.popular}?api_key=${API_KEY}&limit=50`;
 
 export default async function Home() {
-  const res = await fetch(endPoint);
+  const res = await fetch(endPoint,{ next: { revalidate: 3000 } });
   if (res.ok) {
     const data = (await res.json()).results;
     return (
