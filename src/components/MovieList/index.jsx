@@ -48,7 +48,7 @@ export default function MovieList({ data }) {
 const GenreButton = ({ children, isActive, ...props }) => (
   <button
     {...props}
-    className={`${isActive ? "bg-blue-500 text-white" : "bg-transparent text-black"}  hover:bg-blue-500 font-bold py-2 px-4 rounded-full`}
+    className={`${isActive ? "bg-blue-500 text-white" : "bg-blue-500 text-black"}  hover:bg-blue-500 font-bold py-2 px-4 rounded-full`}
   >
     {children}
   </button>
